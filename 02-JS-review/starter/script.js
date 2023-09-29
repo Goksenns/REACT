@@ -145,7 +145,7 @@ function getBook(id) {
 
 //Destructuring
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 // const title = book.title;
@@ -159,6 +159,27 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+// rest operator
 
-console.log(primaryGenre, secondaryGenre);
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+// spread operator with arrays
+
+const newGenres = [...genres, "epic fantasy"];
+newGenres;
+
+// take all the values out of the array and place them here one by one. And so since we are building a new array here we will then get this new array which contains all these individual values and at the end, epic fanstasy now.
+
+// spread operator with objects
+
+const updatedBook = {
+  ...book,
+  //adding a new property
+  moviePublicationDate: "2001-12-19",
+
+  //overwriting an existing property
+  pages: 1210,
+};
+updatedBook;
