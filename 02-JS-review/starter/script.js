@@ -216,3 +216,31 @@ const getYear = (str) => str.split("-")[0];
 // };
 
 console.log(getYear(publicationDate));
+
+//short circuting and logical operators : &&, ||, ??
+
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy value: 0, '' , null, undefined
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+//first value is zero, so its a falsy value. the result of this operator will be the second part, which in this case is wrong. Now to solve this javascript has recently added a new logical operator which is called the nullish coalescing operator.
+
+// this nullish coalescing operator will only return the second value when the first value is null or undefined but not it is zero or empty string.
+
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
