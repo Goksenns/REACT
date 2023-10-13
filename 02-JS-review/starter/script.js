@@ -305,3 +305,23 @@ const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
 pagesAllBooks;
 
 //sum is actually accumulator because we keep adding up and up and up onto this temporary value, so to say, in this case, its simply the sum of the pages and so here we call it sum. normally we say acc.
+
+//THE ARRAY SORT METHOD
+// we can use this method to sort an array.
+
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.sort((a, b) => a - b);
+sorted;
+arr;
+// when we do a minus b, it will be sorted in an ascending way. when we do b minus a, then descending.
+
+//unlike the map filter and reduce method this is not a functional method. So this is actually a method that mutates, so it changes the original array.
+
+//if we dont want to change the original array we can use slice(). before sorting we take a copy and then we sorted only this copy, but not the arr itself.
+const arr1 = [3, 7, 1, 9, 6];
+const sorted1 = arr1.slice().sort((a, b) => a - b);
+sorted1;
+arr1;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
