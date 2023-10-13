@@ -145,6 +145,7 @@ function getBook(id) {
 
 //Destructuring
 
+/*
 const book = getBook(3);
 book;
 
@@ -256,3 +257,29 @@ function getTotalReviewCount(book) {
 // whenever this here is undefined, then javascript will no longer even try to read reviewsCount out of this.
 
 console.log(getTotalReviewCount(book));
+
+*/
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+// whenever this here is undefined, then javascript will no longer even try to read reviewsCount out of this.
+
+//THE ARRAY MAP METHOD
+// the mapp method is basically to create a new array based on the original array with some operation applied to each element of the original array.
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+essentialData;
