@@ -264,7 +264,6 @@ function getTotalReviewCount(book) {
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
   return goodreads + librarything;
 }
-// whenever this here is undefined, then javascript will no longer even try to read reviewsCount out of this.
 
 //THE ARRAY MAP METHOD
 // the mapp method is basically to create a new array based on the original array with some operation applied to each element of the original array.
