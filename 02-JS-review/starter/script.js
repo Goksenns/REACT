@@ -296,3 +296,12 @@ const adventureBooks = books
   .map((book) => book.title);
 //includes always return either true or false
 adventureBooks;
+
+//THE ARRAY REDUCE METHOD
+// the goal of reduce is to reduce, basically, the entire array to just one value so to boil it down.
+
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+
+pagesAllBooks;
+
+//sum is actually accumulator because we keep adding up and up and up onto this temporary value, so to say, in this case, its simply the sum of the pages and so here we call it sum. normally we say acc.
