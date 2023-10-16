@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+
+function App() {
+  return <h1>Hello React!</h1>;
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,8 +11,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+// StrictMode is really not a big deal. The only thing that it does is that during development it will render all components twice in order to find certain bugs. And also React will check if we're using outdated parts of the React API.
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// React before 18
+// React.render(<App />, document.getElementById("root"));
