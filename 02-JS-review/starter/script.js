@@ -145,7 +145,6 @@ function getBook(id) {
 
 //Destructuring
 
-/*
 const book = getBook(3);
 book;
 
@@ -258,7 +257,6 @@ function getTotalReviewCount(book) {
 
 console.log(getTotalReviewCount(book));
 
-*/
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads?.reviewsCount;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
@@ -348,3 +346,28 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id == 1 ? { ...book, pages: 1210 } : book
 );
 booksAfterUpdate;
+
+//ASYNCHRONOUS JAVASCRİPT: PROMİSES
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("goksen");
+
+//then method will basically be called as soon as the promise is fullfilled. So, as soon as it successfully got back with the data.
+
+// this fetch function fired off a request to the API and then immediately Javascript moved on to the next line, which is line 355, where it simply, basically registered dysfunction here to be executed later. The same in line 356 but then it immediately executed 359. line of code. Then some time passed and then the data from the API arrived. And so then, Javascript goes back line 355 and executes this callback function that we had registered before. And so line 355 is where the response arrives. It is converted to JSON, and then line 356 we receive the data in this callback function and log it to the console. So literally, Javascript will wait until it executes these functions here which is usually not how Javascript works. But here we are using asynchronous Javascipt while usually Javascript is a synchronous language where one line of code is simply executed after the other.
+
+//ASYNCHRONOUS JAVASCRİPT: Async/ Await
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+
+  return data;
+}
+const todos = getTodos();
+console.log(todos);
+//result value of this async function is always just a promise.
+console.log("jonas");
