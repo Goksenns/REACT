@@ -72,6 +72,16 @@ function Menu() {
 }
 
 function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 10;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
+  // else alert("Sorry we're closed");
+  //İn strict mode, our components are usually rendered twice and so taht's why we got that alert twice as well.
+
   return (
     <footer>{new Date().toLocaleTimeString()}.We're currently open</footer>
   );
